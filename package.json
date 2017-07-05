@@ -1,0 +1,23 @@
+{
+  "name": "shrinkpack-tar-poc",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Testing shrinkpack tar",
+  "main": "index.js",
+  "scripts": {
+    "test": "run-s reset upgrade status",
+    "reset": "git reset --hard && rm -r node_shrinkwrap && git checkout node_shrinkwrap",
+    "upgrade": "npm i -S react-native@0.46.0 && shrinkpack",
+    "status": "git add -A && git status"
+  },
+  "author": "Brian Frichette <brian.frichette@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "npm-run-all": "~4.0.2",
+    "shrinkpack": "~0.18.1"
+  },
+  "dependencies": {
+    "react": "~16.0.0-alpha.12",
+    "react-native": "~0.45.0"
+  }
+}
